@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* Changed background to a blue-to-purple gradient */
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+        }
+
+        header {
+            background-color: transparent; /* Let gradient show */
+            color: #00f;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #00f;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+            border-bottom: 1px solid #333;
+        }
+
+        .profile-pic {
+            text-align: center;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #00f;
+        }
+
+        h2 {
+            color: #00f;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li {
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 8px 0;
+            padding: 10px;
+            border-left: 5px solid #00f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ccc;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: 1px solid #00f;
+        }
+
+        button {
+            background-color: #00f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0055ff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        My Portfolio
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="profile-pic">
+        <img src="https://i.supaimg.com/01a61a6d-f765-4c47-b1e5-8d113214e573.jpg">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hello! I'm Durga, passionate about creating sleek and modern websites.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Durga. I am 18 years old and I am currently studying BCA, second year, at Government Arts College in C. Mutlur.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>C</li>
+            <li>C++</li>
+            <li>Python</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>Bachelor of Computer Science</strong> - Government Arts College, C. Mutlur</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+    <footer>
+        &copy; 2025 My Portfolio. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                document.getElementById("formMessage").textContent = "Thank you, " + name + "! Your message has been sent.";
+                document.getElementById("formMessage").style.color = "#00f";
+                this.reset();
+            } else {
+                document.getElementById("formMessage").textContent = "Please fill out all fields.";
+                document.getElementById("formMessage").style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+</html>
